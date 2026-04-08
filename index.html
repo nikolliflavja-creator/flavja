@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistemi Tretës</title>
+<style>
+/* ===== BACKGROUND ROZË I ANIMUAR ===== */
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background: linear-gradient(-45deg,#ff9ecf,#ffc2e2,#ffd6ec,#ffb3d9);
+  background-size:400% 400%;
+  animation:bgMove 12s ease infinite;
+  color:#111;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ===== SCROLL ANIMATION ===== */
+section{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+  padding:60px 20px;
+}
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== TITLES ===== */
+h1,h2{
+  text-align:center;
+  color:black;
+  text-shadow:2px 2px 8px black;
+  margin-bottom:30px;
+}
+h3{ color:black; }
+
+/* ===== GLASS EFFECT ===== */
+.card{
+  backdrop-filter:blur(14px);
+  background:rgba(255,255,255,0.25);
+  border:1px solid rgba(255,255,255,0.6);
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transition:0.4s;
+}
+.card:hover{
+  transform:scale(1.05);
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:0 30px;
+}
+
+/* ===== IMAGES ===== */
+.images{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+.images img{
+  width:320px;
+  border-radius:15px;
+  transition:0.4s;
+}
+.images img:hover{ transform:scale(1.1); }
+
+/* ===== ENZYMES ===== */
+.enzymes{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.enzymes img{ width:230px; border-radius:15px; transition:0.4s; }
+.enzymes img:hover{ transform:scale(1.1); }
+
+/* ===== ABSORB ===== */
+.absorb{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.absorb img{ width:380px; border-radius:15px; transition:0.4s; }
+.absorb img:hover{ transform:scale(1.1); }
+
+/* ===== VIDEO ===== */
+.video-btn{
+  display:block;
+  margin:40px auto;
+  padding:15px 35px;
+  font-size:18px;
+  background:white;
+  color:#b30000;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.video-btn:hover{ background:#ffe6e6; transform:scale(1.05); }
+
+/* ===== MODAL ===== */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+}
+.modal iframe{ width:800px; height:450px; border-radius:15px; }
+
+/* ===== QUIZ ===== */
+.quiz-question{ margin-bottom:15px; }
+.quiz-option{
+  display:block;
+  margin:5px 0;
+  padding:10px;
+  border-radius:10px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.25);
+  border:1px solid rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+.quiz-option:hover{ transform:scale(1.05); }
+.quiz-option.correct{ background:rgba(0,255,0,0.4); }
+.quiz-option.wrong{ background:rgba(255,0,0,0.4); }
+#quiz-result{ margin-top:15px; font-weight:bold; text-align:center; }
+</style>
+</head>
+<body>
+
+<!-- ORGANET -->
+<section>
+<h1>Sistemi Tretës</h1>
+<h2>Organet e Sistemit Tretës</h2>
+<div class="grid">
+<div class="card"><h3>Goja</h3><p>Goja është fillimi i procesit të tretjes. Ushqimi përtypet dhe copëtohet mekanikisht nga dhëmbët. Pështyma përmban enzimën amilazë që fillon tretjen e karbohidrateve. Gjuha ndihmon në përzierjen dhe gëlltitjen e ushqimit.</p></div>
+<div class="card"><h3>Ezofagu</h3><p>Ezofagu transporton ushqimin nga goja në stomak. Ai përdor lëvizje peristaltike për shtyrjen e tij. Nuk ndodh tretje kimike në këtë organ. Funksioni i tij është thjesht transportues.</p></div>
+<div class="card"><h3>Stomaku</h3><p>Stomaku përzien ushqimin me acid gastrik. Pepsina fillon zbërthimin e proteinave. Acidi shkatërron mikrobet e dëmshme. Ushqimi shndërrohet në kimus të lëngshëm.</p></div>
+<div class="card"><h3>Zorra e Hollë</h3><p>Zorra e hollë është vendi kryesor i tretjes kimike. Enzimat pankreatike veprojnë intensivisht këtu. Lëndët ushqyese absorbohen në gjak. Ajo ka vilozitete që rrisin sipërfaqen e përthithjes.</p></div>
+<div class="card"><h3>Zorra e Trashë</h3><p>Zorra e trashë thith ujin dhe kripërat minerale. Bakteret ndihmojnë në fermentim. Formohen mbetjet e ngurta. Pastaj ndodh eliminimi nga trupi.</p></div>
+</div>
+<div class="images">
+<img src="https://i.ytimg.com/vi/zd3PBZncvDE/maxresdefault.jpg">
+<img src="https://i.ytimg.com/vi/hsJideOPEV0/maxresdefault.jpg">
+<img src="https://image1.slideserve.com/2267502/pamje-e-gj-ndrave-t-p-shtym-s-l.jpg">
+</div>
+</section>
+
+<!-- PROCESI -->
+<section>
+<h2>Procesi i Tretjes së Ushqimit</h2>
+<div class="grid">
+<div class="card"><p>Tretja fillon në gojë me përtypje dhe përzierje me pështymë. Ushqimi copëtohet dhe përgatitet për stomakun. Fillon zbërthimi i karbohidrateve.</p></div>
+<div class="card"><p>Në stomak ndodh tretja intensive e proteinave. Acidi gastrik aktivizon enzimat. Formohet kimusi për fazën tjetër.</p></div>
+<div class="card"><p>Në zorrën e hollë enzimat pankreatike përfundojnë zbërthimin. Bilia ndihmon në tretjen e yndyrnave. Lëndët ushqyese kalojnë në gjak.</p></div>
+<div class="card"><p>Në zorrën e trashë thithet uji. Mbetjet formohen dhe përgatiten për eliminim. Procesi përfundon me jashtëqitjen.</p></div>
+</div>
+</section>
+
+<!-- ENZYMAT -->
+<section>
+<h2>Roli i Enzimave</h2>
+<div class="enzymes">
+<img src="https://thumbs.dreamstime.com/z/constipation-27298663.jpg?ct=jpeg">
+<div class="card" style="max-width:600px;">
+<p>Enzimat janë proteina që përshpejtojnë reaksionet kimike të tretjes. Ato veprojnë në mënyrë specifike për çdo lloj ushqimi. Amilaza zbërthen karbohidratet në sheqerna të thjeshtë. Proteazat ndajnë proteinat në aminoacide. Lipazat zbërthejnë yndyrnat në acide yndyrore. Enzimat ndihmojnë që përthithja të jetë më efikase. Pa enzima, tretja do të ishte shumë e ngadaltë dhe jo e plotë.</p>
+</div>
+<img src="https://www.gastroepato.it/en_constipation-causes.webp">
+</div>
+</section>
+
+<!-- MELÇIA & PANKREASI -->
+<section>
+<h2>Mëlçia dhe Pankreasi</h2>
+<div class="grid">
+<div class="card"><h3>Mëlçia</h3><p>Mëlçia prodhon lëngun biliar që ndihmon në tretjen e yndyrnave. Bilia emulsifikon yndyrnat për tretje më të lehtë. Ajo ruan vitamina dhe minerale. Pastron gjakun nga toksinat. Ka rol kyç në metabolizëm.</p></div>
+<div class="card"><h3>Pankreasi</h3><p>Pankreasi prodhon lëng pankreatik me enzima të fuqishme. Amilaza zbërthen karbohidratet. Proteazat ndajnë proteinat. Lipaza ndihmon në tretjen e yndyrnave. Ai prodhon insulinë për kontrollin e sheqerit.</p></div>
+</div>
+</section>
+
+<!-- VIDEO -->
+<section>
+<h2>Video Ilustruese</h2>
+<button class="video-btn" onclick="openModal()">Shiko Videon</button>
+</section>
+<div class="modal" id="modalVideo">
+<iframe src="https://drive.google.com/file/d/1cvk76WLWIwXrwlgM9Kd2A9mHh99a63zb/preview?mute=1" allow="autoplay"></iframe>
+</div>
+
+<!-- PERTHITHJA -->
+<section>
+<h2>Përthithja e Lëndëve Ushqyese</h2>
+<div class="absorb">
+<div class="card" style="max-width:600px;">
+<p>Në zorrën e hollë ndodh përthithja e lëndëve ushqyese në gjak. Vilozitetet rrisin sipërfaqen e përthithjes. Vitaminat dhe mineralet kalojnë përmes murit të zorrës. Aminoacidet dhe sheqernat shpërndahen në qarkullim. Acidet yndyrore transportohen përmes sistemit limfatik. Gjaku i shpërndan këto lëndë në të gjithë trupin. Qelizat i përdorin ato për energji dhe rritje.</p>
+</div>
+<img src="https://mjekesiaortomolekulare.com/wp-content/uploads/2019/10/VitaminsandMinerals-e1487508392319.jpg">
+</div>
+</section>
+
+<!-- RENDESIA -->
+<section>
+<h2>Rëndësia e Ushqyerjes së Shëndetshme për Sistemin Tretës</h2>
+<div class="card" style="max-width:800px; margin:auto;">
+<p>Sistemi tretës ka rol të rëndësishëm në përpunimin e ushqimit dhe përthithjen e lëndëve ushqyese. Një ushqyerje e shëndetshme ndihmon që ai të funksionojë siç duhet. Fibrat janë thelbësore për një tretje të mirë. Ato ndihmojnë lëvizjen e rregullt të zorrëve dhe përmirësojnë funksionin e tyre. Fibrat mbështesin edhe mikroflorën e zorrëve. Ushqime të pasura me fibra janë drithërat integrale, bishtajoret, frutat dhe perimet. Uji ndihmon në shpërbërjen e ushqimit dhe përthithjen e vitaminave. Ai është i rëndësishëm për funksionimin normal të zorrëve. Një dietë e balancuar ndihmon në ruajtjen e energjisë dhe shëndetit. Prandaj, ushqimi i shëndetshëm dhe uji janë thelbësorë për një sistem tretës të mirë.</p>
+</div>
+</section>
+
+<!-- QUIZ INTERAKTIV -->
+<section>
+<h2>Quiz - Sistemi Tretës</h2>
+<div class="card" style="max-width:900px; margin:auto;">
+<div id="quiz-container"></div>
+<div id="quiz-result"></div>
+</div>
+</section>
+
+<script>
+// ===== ANIMACIONI SCROLL =====
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top < window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+// ===== VIDEO MODAL =====
+function openModal(){ document.getElementById("modalVideo").style.display="flex"; }
+
+// ===== QUIZ =====
+const quizData=[
+{q:"Ku fillon procesi i tretjes?", a:"B) Gojë"},
+{q:"Cila enzimë fillon tretjen e karbohidrateve?", a:"C) Amilaza"},
+{q:"Cili organ transporton ushqimin drejt stomakut?", a:"B) Ezofagu"},
+{q:"Ku ndodh tretja kryesore kimike?", a:"A) Zorra e hollë"},
+{q:"Çfarë prodhon mëlçia?", a:"B) Lëng biliar"},
+{q:"Cili është funksioni i zorrës së trashë?", a:"B) Thith ujin"},
+{q:"Cila enzimë zbërthen yndyrnat?", a:"C) Lipaza"},
+{q:"Çfarë ndihmon në tretjen e yndyrnave?", a:"B) Bilia"},
+{q:"Ku ndodh përthithja e lëndëve ushqyese?", a:"C) Zorra e hollë"},
+{q:"Pse janë të rëndësishme fibrat?", a:"B) Ndihmojnë tretjen"}
+];
+
+const options=[
+["A) Stomak","B) Gojë","C) Zorrë e hollë","D) Ezofag"],
+["A) Pepsina","B) Lipaza","C) Amilaza","D) Insulina"],
+["A) Zorra","B) Ezofagu","C) Mëlçia","D) Pankreasi"],
+["A) Zorra e hollë","B) Goja","C) Ezofagu","D) Zorra e trashë"],
+["A) Insulinë","B) Lëng biliar","C) Pepsinë","D) Amilazë"],
+["A) Tret proteinat","B) Thith ujin","C) Prodhon enzima","D) Përtyp ushqimin"],
+["A) Amilaza","B) Proteaza","C) Lipaza","D) Pepsina"],
+["A) Uji","B) Bilia","C) Oksigjeni","D) Gjakut"],
+["A) Stomak","B) Ezofag","C) Zorra e hollë","D) Zorra e trashë"],
+["A) Rrisin sheqerin","B) Ndihmojnë tretjen","C) Shkaktojnë sëmundje","D) Nuk kanë rol"]
+];
+
+const container=document.getElementById("quiz-container");
+quizData.forEach((item,index)=>{
+  const qDiv=document.createElement("div");
+  qDiv.classList.add("quiz-question");
+  const qTitle=document.createElement("p");
+  qTitle.innerHTML=`<b>${index+1}. ${item.q}</b>`;
+  qDiv.appendChild(qTitle);
+  options[index].forEach(opt=>{
+    const btn=document.createElement("button");
+    btn.classList.add("quiz-option");
+    btn.textContent=opt;
+    btn.addEventListener("click",()=>{
+      document.querySelectorAll(`#quiz-container .quiz-question`)[index].querySelectorAll(".quiz-option").forEach(b=>{
+        b.disabled=true;
+        if(b.textContent===item.a){ b.classList.add("correct"); }
+      });
+      if(btn.textContent!==item.a){ btn.classList.add("wrong"); }
+      updateScore();
+    });
+    qDiv.appendChild(btn);
+  });
+  container.appendChild(qDiv);
+});
+
+function updateScore(){
+  let score=0;
+  quizData.forEach((item,index)=>{
+    const qBtns=document.querySelectorAll(`#quiz-container .quiz-question`)[index].querySelectorAll(".quiz-option");
+    qBtns.forEach(b=>{
+      if(b.classList.contains("correct") && b.disabled) score++;
+    });
+  });
+  document.getElementById("quiz-result").textContent=`Rezultati aktual: ${score} / ${quizData.length}`;
+}
+</script>
+
+</body>
+</html>
